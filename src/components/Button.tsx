@@ -4,7 +4,7 @@ interface Text {
 function Button({ text }: Text) {
   const formattedSections = text.toLowerCase().replace(/\s+/g, "");
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // e.preventDefault();
+    e.preventDefault();
     const targetElement = document.getElementById(formattedSections);
     if (targetElement) {
       const offset = 96;
