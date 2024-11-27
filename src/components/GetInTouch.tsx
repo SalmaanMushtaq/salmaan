@@ -1,25 +1,12 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 import toast, { Toaster } from "react-hot-toast";
-import { z } from "zod";
-import { UserSchema, userSchema } from "./schemas/userSchema";
+import { userSchema } from "./schemas/userSchema";
 import { useZodForm } from "./hooks/useZodForm";
 import FormField from "../components/shared/FormField";
 const PUBLIC_KEY = "zBWtRlGZeDN7TMlkz";
 const SERVICE_ID = "service_j1auat8";
 const TEMPLATE_ID = "template_6jskj0l";
-
-const userDataSchema = z.object({
-  userName: z.string().min(1, "Please enter your name."),
-  userEmail: z.string().email("Please enter a valid email address."),
-  userPhone: z
-    .string()
-    .regex(/^\d{10}$/, "Please enter a valid 10-digit phone number."),
-  message: z.string().min(1, "Please enter your message."),
-  date: z.string(),
-});
-
-type UserData = z.infer<typeof userDataSchema>;
 
 function GetInTouch() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -37,7 +24,7 @@ function GetInTouch() {
       date: new Date().toISOString(),
     },
   });
-  const onSubmit = async (data: UserSchema) => {
+  const onSubmit = async () => {
     if (formRef.current) {
       try {
         await emailjs.sendForm(
