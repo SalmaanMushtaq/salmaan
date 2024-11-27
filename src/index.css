@@ -26,6 +26,10 @@ html,
 main {
   flex: 1 1 auto;
 }
+.dark #root {
+  background-color: whitesmoke;
+  color: #181313ed;
+}
 .customShadow {
   box-shadow:
     10px 10px 10px rgba(255, 255, 255, 0.1) inset,
@@ -51,6 +55,19 @@ main {
   background-color: hwb(22 35% 0%);
   color: #070707;
   font-weight: 600;
+  text-align: center;
+  position: relative;
+}
+@media screen and (max-width: 767.9px) {
+  .active::after {
+    position: absolute;
+    bottom: -8px;
+    content: "";
+    width: 100%;
+    background-color: rgba(255, 149, 89, 1);
+    height: 4px;
+    border-radius: 20px;
+  }
 }
 
 /* for all social containers*/

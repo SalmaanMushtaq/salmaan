@@ -13,7 +13,7 @@ function TechSkills() {
     <div className="mt-10" id="techskills">
       <h1 className="text-4xl font-bold leading-relaxed flex gap-4 items-center">
         <span className="bg-basic p-3 rounded-full">
-          <RiComputerLine className="bg-basic" />
+          <RiComputerLine className="bg-basic dark:text-white" />
         </span>
         Technical Skills
       </h1>

@@ -10,16 +10,17 @@ function DownloadCV() {
           href={CV}
           target="_blank"
           rel="noopener noreferrer"
-          className="btnHover p-1 px-6 bg-basic rounded-full flex justify-between gap-3 items-center font-semibold"
+          className="btnHover p-1 px-6 bg-basic rounded-full flex justify-between gap-3 items-center font-semibold dark:text-black"
         >
-          View CV <FaRegEye className="text-xl" />
+          View CV <FaRegEye className="text-xl dark:text-black" />
         </a>
         <a
           href={CV}
           download="Salmaan_Mushtaq"
-          className="btnHover p-1 px-6 bg-basic rounded-full flex justify-between gap-3 items-center font-semibold"
+          className="btnHover p-1 px-6 bg-basic rounded-full flex justify-between gap-3 items-center font-semibold dark:text-black"
         >
-          Download CV <IoCloudDownloadOutline className="text-xl" />
+          Download CV{" "}
+          <IoCloudDownloadOutline className="text-xl dark:text-black" />
         </a>
       </div>
     </div>

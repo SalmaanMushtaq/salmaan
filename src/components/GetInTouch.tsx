@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { toast, ToastContainer } from "react-toastify";
 import { z } from "zod";
-const PUBLIC_KEY = import.meta.env.PUBLIC_KEY;
-const SERVICE_ID = import.meta.env.SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.TEMPLATE_ID;
+const PUBLIC_KEY = "zBWtRlGZeDN7TMlkz";
+const SERVICE_ID = "service_j1auat8";
+const TEMPLATE_ID = "template_6jskj0l";
 const userDataSchema = z.object({
   userName: z.string().min(1, "Please enter your name."),
   userEmail: z.string().email("Please enter a valid email address."),
@@ -131,7 +131,7 @@ function GetInTouch() {
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="mt-10 m-auto p-5 flex flex-col gap-6 sm:w-3/4"
+        className="mt-10 m-auto md:p-5 flex flex-col gap-6 w-full lg:w-3/4"
       >
         <div>
           <input
@@ -140,7 +140,7 @@ function GetInTouch() {
             placeholder="Your Name*"
             onChange={handleChange}
             value={userData.userName}
-            className={`bg-background p-3 w-full rounded-full ${
+            className={`bg-background p-3 w-full rounded-full dark:text-white ${
               errors.userName && "border border-red-500"
             }`}
           />
@@ -156,7 +156,7 @@ function GetInTouch() {
               onChange={handleChange}
               value={userData.userEmail}
               placeholder="Your Email*"
-              className={`bg-background p-3 w-full rounded-full ${
+              className={`bg-background p-3 w-full rounded-full dark:text-white ${
                 errors.userEmail && "border border-red-500"
               }`}
             />
@@ -171,7 +171,7 @@ function GetInTouch() {
               onChange={handleChange}
               value={userData.userPhone}
               placeholder="Your Phone*"
-              className={`bg-background p-3 w-full rounded-full ${
+              className={`bg-background p-3 w-full rounded-full dark:text-white ${
                 errors.userPhone && "border border-red-500"
               }`}
             />
@@ -188,7 +188,7 @@ function GetInTouch() {
             onChange={handleChange}
             value={userData.message}
             placeholder="Your Message Here..."
-            className={`bg-background p-3 w-full rounded-3xl ${
+            className={`bg-background p-3 w-full rounded-3xl dark:text-white ${
               errors.message && "border border-red-500"
             }`}
           ></textarea>
@@ -197,7 +197,10 @@ function GetInTouch() {
           )}
         </div>
         <input type="hidden" name="date" value={userData.date} />
-        <button type="submit" className="customShadow p-4 w-1/4 self-end">
+        <button
+          type="submit"
+          className="customShadow p-4 lg:w-1/4 self-end dark:text-dark dark:font-bold dark:text-xl dark:border-2 dark:border-slate-800 rounded-full"
+        >
           Send Message
         </button>
       </form>

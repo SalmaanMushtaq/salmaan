@@ -13,7 +13,7 @@ function Portfolio() {
     <>
       <Introduction />
       <Profile heading="Portfolio" />
-      <div className="mt-4 gap-5 grid grid-cols-1 w-[20%] mx-auto bg-background rounded-2xl p-4 lg:rounded-full">
+      <div className="mt-4 gap-5 grid grid-cols-1 w-[20%] mx-auto bg-background rounded-2xl p-4 lg:rounded-full dark:text-white">
         <Button text="Resturant" />
       </div>
       {/* <Options options={["Resturant Page"]} /> */}

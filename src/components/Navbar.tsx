@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { FcHome, FcBusinessman, FcContacts } from "react-icons/fc";
 import { Link } from "@tanstack/react-router";
+import { IoSunny } from "react-icons/io5";
+import { FaMoon } from "react-icons/fa6";
 
 function Navbar() {
   const [isFixed, setIsFixed] = useState(false);
+  const [dark, setDark] = useState(true);
 
-  // Add an event listener to toggle sticky state
+  const darkModeHandler = () => {
+    setDark(!dark);
+    document.body.classList.toggle("dark");
+  };
+
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setIsFixed(true);
@@ -27,7 +34,7 @@ function Navbar() {
           <li>
             <Link
               to="/"
-              className="border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
+              className="dark:text-white border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
               hover:border-white hover:border-2"
             >
               Profile
@@ -36,7 +43,7 @@ function Navbar() {
           <li>
             <Link
               to="/portfolio"
-              className="border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
+              className="dark:text-white border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
                hover:border-white hover:border-2"
             >
               Portfolio
@@ -45,11 +52,21 @@ function Navbar() {
           <li>
             <Link
               to="/contact"
-              className="border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
+              className=" dark:text-white border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
               hover:border-white hover:border-2"
             >
               Contact
             </Link>
+          </li>
+          <li>
+            <button
+              onClick={() => darkModeHandler()}
+              className="border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
+              hover:border-white hover:border-2"
+            >
+              {!dark && <IoSunny className="dark:text-white" />}
+              {dark && <FaMoon className="dark:text-white" />}
+            </button>
           </li>
         </ul>
       </nav>
@@ -75,6 +92,15 @@ function Navbar() {
             <Link to="/contact">
               <FcContacts className="text-4xl transition-transform duration-200 hover:scale-110" />
             </Link>
+          </li>
+          <li>
+            <button
+              onClick={() => darkModeHandler()}
+              className="text-4xl transition-transform duration-200 hover:scale-110"
+            >
+              {!dark && <IoSunny className="text-basic" />}
+              {dark && <FaMoon />}
+            </button>
           </li>
         </ul>
       </nav>

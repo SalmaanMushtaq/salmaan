@@ -5,7 +5,7 @@ function Education() {
     <div className="mt-10" id="education">
       <h1 className="text-4xl font-bold leading-relaxed flex gap-4 items-center">
         <span className="bg-basic p-3 rounded-full">
-          <PiGraduationCap className="bg-basic" />
+          <PiGraduationCap className="bg-basic dark:text-white" />
         </span>
         Education
       </h1>
