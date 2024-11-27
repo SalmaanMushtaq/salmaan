@@ -1,10 +1,9 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
-import { toast, ToastContainer } from "react-toastify";
-import { useZodForm } from "../components/hooks/useZodForm";
+import toast, { Toaster } from "react-hot-toast";
+import { userSchema } from "./schemas/userSchema";
+import { useZodForm } from "./hooks/useZodForm";
 import FormField from "../components/shared/FormField";
-import { UserSchema, userSchema } from "./schemas/userSchema";
-
 const PUBLIC_KEY = "zBWtRlGZeDN7TMlkz";
 const SERVICE_ID = "service_j1auat8";
 const TEMPLATE_ID = "template_6jskj0l";
@@ -25,40 +24,24 @@ function GetInTouch() {
       date: new Date().toISOString(),
     },
   });
-  const onSubmit = async (data: UserSchema) => {
+  const onSubmit = async () => {
     if (formRef.current) {
       try {
-        console.log(data);
-
         await emailjs.sendForm(
           SERVICE_ID,
           TEMPLATE_ID,
           formRef.current,
           PUBLIC_KEY
         );
-
         toast.success("Message sent successfully!", {
           className:
             "bg-lime-500 text-white rounded-lg flex justify-center p-4",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          position: "top-center",
         });
-
         reset();
       } catch (error: any) {
         toast.error(`Message failed: ${error}`, {
           className:
             "bg-red-500 text-white w-[300px] rounded-lg shadow-lg flex justify-center p-4",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          position: "top-center",
         });
       }
     }
@@ -66,14 +49,7 @@ function GetInTouch() {
 
   return (
     <div className="mt-10">
-      <ToastContainer
-        autoClose={5000}
-        hideProgressBar
-        closeOnClick
-        pauseOnHover
-        draggable
-        position="top-center"
-      />
+      <Toaster position="top-right" reverseOrder={false} gutter={8} />
       <h1 className="text-4xl font-bold leading-relaxed">Get In Touch</h1>
       <form
         ref={formRef}
@@ -87,7 +63,7 @@ function GetInTouch() {
             placeholder="Your Name*"
             register={register}
             error={errors.userName}
-            className={`bg-background p-3 w-full rounded-full ${
+            className={`bg-background p-3 w-full rounded-full dark:text-white ${
               errors.userName && "border border-red-500"
             }`}
           />
@@ -99,7 +75,7 @@ function GetInTouch() {
               name="userEmail"
               register={register}
               placeholder="Your Email*"
-              className={`bg-background p-3 w-full rounded-full ${
+              className={`bg-background p-3 w-full rounded-full dark:text-white ${
                 errors.userEmail && "border border-red-500"
               }`}
             />
@@ -110,7 +86,7 @@ function GetInTouch() {
               name="userPhone"
               register={register}
               placeholder="Your Phone*"
-              className={`bg-background p-3 w-full rounded-full ${
+              className={`bg-background p-3 w-full rounded-full dark:text-white ${
                 errors.userPhone && "border border-red-500"
               }`}
             />
@@ -122,13 +98,16 @@ function GetInTouch() {
             type="textarea"
             register={register}
             placeholder="Your Message Here..."
-            className={`bg-background p-3 w-full rounded-3xl ${
+            className={`bg-background p-3 w-full rounded-3xl dark:text-white ${
               errors.message && "border border-red-500"
             }`}
           ></FormField>
         </div>
         <input type="hidden" {...register("date")} />
-        <button type="submit" className="customShadow p-4 w-1/4 self-end">
+        <button
+          type="submit"
+          className="customShadow p-4 lg:w-1/4 self-end dark:text-dark dark:font-bold dark:text-xl dark:border-2 dark:border-slate-800 rounded-full"
+        >
           Send Message
         </button>
       </form>

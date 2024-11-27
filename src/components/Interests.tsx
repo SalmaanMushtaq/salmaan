@@ -12,7 +12,7 @@ function Interests() {
     <div className="mt-10" id="interests">
       <h1 className="text-4xl font-bold leading-relaxed flex gap-4 items-center">
         <span className="bg-basic p-3 rounded-full">
-          <BsCupHotFill className="bg-basic" />
+          <BsCupHotFill className="bg-basic dark:text-white" />
         </span>
         Interests
       </h1>

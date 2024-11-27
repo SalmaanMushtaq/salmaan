@@ -9,7 +9,7 @@ function Work({ project }: { project: Project }) {
   return (
     <div className="max-w-xl mx-auto lg:w-full xl:w-full">
       <div className="flex items-center mb-4 gap-5">
-        <span className="rounded-full bg-background w-10 h-10 flex items-center justify-center text-xl">
+        <span className="rounded-full bg-background w-10 h-10 flex items-center justify-center text-xl dark:text-white">
           {project.id}
         </span>
         <h1 className="text-2xl font-bold">{project.name}</h1>
@@ -35,7 +35,7 @@ function Work({ project }: { project: Project }) {
       <div className="mt-5 text-end">
         {project.githubLink && (
           <button
-            className="btnHover p-1 px-6 bg-background rounded-full
+            className="btnHover p-1 px-6 bg-background rounded-full dark:text-black
           "
           >
             <a

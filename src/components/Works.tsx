@@ -38,7 +38,7 @@ const projectsArray: Project[] = [
 ];
 function Works() {
   return (
-    <div className="mt-10 grid grid-cols-1 gap-6">
+    <div className="mt-10 grid grid-cols-1 gap-6 ">
       {projectsArray.map((project) => (
         <Work key={project.id} project={project} />
       ))}

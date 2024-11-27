@@ -5,11 +5,11 @@ function Languages() {
     <div className="mt-10">
       <h1 className="text-4xl font-bold leading-relaxed flex gap-4 items-center">
         <span className="bg-basic p-3 rounded-full">
-          <MdOutlineLanguage className="bg-basic" />
+          <MdOutlineLanguage className="bg-basic dark:text-white" />
         </span>
         Languages
       </h1>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 ms-10 ps-8">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 ms-8 me-4 md:ms-10 md:ps-8">
         <Language
           name="Kashmiri"
           proficiency="(Native)"

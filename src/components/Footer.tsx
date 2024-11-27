@@ -40,13 +40,13 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="bg-background socialSvg instagramSvg" />
+            <FaInstagram className="bg-background socialSvg instagramSvg dark:text-white" />
           </a>
           <a
             href="https://github.com/SalmaanMushtaq"
             target="_blank"
             rel="noopener noreferrer"
-            className="socialContainer containerTwo customShadow border border-navLinkBorder"
+            className="socialContainer containerTwo customShadow border border-navLinkBorder dark:text-white"
           >
             <FaGithub className="bg-background socialSvg gitHubSvg" />
             {/* <FaTwitter className="bg-background socialSvg twitterSvg" /> */}
@@ -55,7 +55,7 @@ function Footer() {
             href="https://www.linkedin.com/in/salmaan-mushtaq-5b4998242"
             target="_blank"
             rel="noopener noreferrer"
-            className="socialContainer containerThree customShadow border border-navLinkBorder"
+            className="socialContainer containerThree customShadow border border-navLinkBorder dark:text-white"
           >
             <FaLinkedinIn className="bg-background socialSvg linkdinSvg" />
           </a>
@@ -63,7 +63,7 @@ function Footer() {
             href="https://wa.me/+917006172734"
             target="_blank"
             rel="noopener noreferrer"
-            className="socialContainer containerFour customShadow border border-navLinkBorder"
+            className="socialContainer containerFour customShadow border border-navLinkBorder dark:text-white"
           >
             <FaWhatsapp className="bg-background socialSvg whatsappSvg" />
           </a>
