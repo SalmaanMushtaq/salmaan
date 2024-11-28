@@ -3,8 +3,7 @@ interface Text {
 }
 function Button({ text }: Text) {
   const formattedSections = text.toLowerCase().replace(/\s+/g, "");
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
+  const handleClick = () => {
     const targetElement = document.getElementById(formattedSections);
     if (targetElement) {
       const offset = 96;
@@ -21,7 +20,7 @@ function Button({ text }: Text) {
   return (
     <a
       className="lightShadow customShadow inline-flex justify-center items-center p-1 px-6 bg-btnBackground rounded-full
-      border-2 border-transparent hover:border-white hover:border-2 dark:text-black dark:bg-darkBackground "
+      border-2 border-transparent hover:border-white hover:border-2 dark:text-black dark:bg-darkBackground hover:bg-basic dark:hover:bg-basic dark:hover:text-white dark:hover:border-basic"
       href={`#${formattedSections}`}
       onClick={handleClick}
     >

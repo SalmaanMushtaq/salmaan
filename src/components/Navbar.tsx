@@ -16,7 +16,7 @@ function Navbar() {
     <header className="container mx-auto">
       {/* Desktop Navbar */}
       <nav className="container px-16 hidden  sm:flex sm:justify-end sm:items-center gap-4 pt-8 pb-3 fixed top-0 w-full z-10 bg-[#181313] dark:bg-[#f5f5f5]">
-        <ul className="flex gap-4 flex-wrap">
+        <ul className="flex gap-4 flex-wrap justify-center items-center">
           <li>
             <Link
               to="/"
@@ -50,8 +50,8 @@ function Navbar() {
               className="border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
               hover:border-white hover:border-2"
             >
-              {!dark && <IoSunny className="dark:text-white" />}
-              {dark && <FaMoon className="dark:text-white" />}
+              {!dark && <IoSunny className="dark:text-white" size={16} />}
+              {dark && <FaMoon className="dark:text-white" size={16} />}
             </button>
           </li>
         </ul>
@@ -78,7 +78,7 @@ function Navbar() {
           <li>
             <button
               onClick={() => darkModeHandler()}
-              className="text-4xl transition-transform duration-200 hover:scale-110"
+              className="text-4xl py-2 transition-transform duration-200 hover:scale-110"
             >
               {!dark && <IoSunny className="text-basic" />}
               {dark && <FaMoon />}
