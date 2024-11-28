@@ -10,6 +10,8 @@ export default {
         btnBackground: "rgb(46 44 44)",
         formTextColor: "#5F5F5F",
         navLinkBorder: "#f5f5f52b",
+        darkBackground: "rgb(255 255 255 / 20%)",
+        lightShadow: "1px 0px 10px 10px rgba(0, 0, 0, 0.3) inset",
       },
     },
   },

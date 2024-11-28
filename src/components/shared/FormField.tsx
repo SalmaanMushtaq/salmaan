@@ -30,7 +30,7 @@ const InputField: React.FC<InputFieldProps> = ({
         type={type}
         placeholder={placeholder}
         {...register(name)}
-        className={`${className} bg-background p-3 w-full rounded-full ${
+        className={`${className} bg-background p-3 w-full rounded-full px-6 dark:outline-slate-700 h-14 ${
           error && "border border-red-500"
         }`}
       />

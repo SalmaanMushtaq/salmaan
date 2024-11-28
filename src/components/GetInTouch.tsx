@@ -50,30 +50,30 @@ function GetInTouch() {
   return (
     <div className="mt-10">
       <Toaster position="top-right" reverseOrder={false} gutter={8} />
+
       <h1 className="text-4xl font-bold leading-relaxed">Get In Touch</h1>
       <form
         ref={formRef}
         onSubmit={handleSubmit(onSubmit)}
         className="mt-10 m-auto p-5 flex flex-col gap-6 sm:w-3/4"
       >
-        <div>
-          <FormField
-            type="text"
-            name="userName"
-            placeholder="Your Name*"
-            register={register}
-            error={errors.userName}
-            className={`bg-background p-3 w-full rounded-full dark:text-white ${
-              errors.userName && "border border-red-500"
-            }`}
-          />
-        </div>
+        <FormField
+          type="text"
+          name="userName"
+          placeholder="Your Name*"
+          register={register}
+          error={errors.userName}
+          className={`bg-background p-3 w-full rounded-full dark:text-white ${
+            errors.userName && "border border-red-500"
+          }`}
+        />
         <div className="flex flex-col lg:flex-row gap-4">
           <div className="w-full lg:w-1/2">
             <FormField
               type="email"
               name="userEmail"
               register={register}
+              error={errors.userEmail}
               placeholder="Your Email*"
               className={`bg-background p-3 w-full rounded-full dark:text-white ${
                 errors.userEmail && "border border-red-500"
@@ -85,6 +85,7 @@ function GetInTouch() {
               type="text"
               name="userPhone"
               register={register}
+              error={errors.userPhone}
               placeholder="Your Phone*"
               className={`bg-background p-3 w-full rounded-full dark:text-white ${
                 errors.userPhone && "border border-red-500"
@@ -92,21 +93,20 @@ function GetInTouch() {
             />
           </div>
         </div>
-        <div>
-          <FormField
-            name="message"
-            type="textarea"
-            register={register}
-            placeholder="Your Message Here..."
-            className={`bg-background p-3 w-full rounded-3xl dark:text-white ${
-              errors.message && "border border-red-500"
-            }`}
-          ></FormField>
-        </div>
+        <FormField
+          name="message"
+          type="textarea"
+          register={register}
+          error={errors.message}
+          placeholder="Your Message Here..."
+          className={`bg-background p-3 w-full rounded-3xl dark:text-white ${
+            errors.message && "border border-red-500"
+          }`}
+        ></FormField>
         <input type="hidden" {...register("date")} />
         <button
           type="submit"
-          className="customShadow p-4 lg:w-1/4 self-end dark:text-dark dark:font-bold dark:text-xl dark:border-2 dark:border-slate-800 rounded-full"
+          className="lightShadow customShadow p-4 lg:w-1/4 self-end dark:text-dark font-bold text-xl rounded-full"
         >
           Send Message
         </button>

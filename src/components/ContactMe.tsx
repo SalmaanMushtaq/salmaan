@@ -12,7 +12,7 @@ function ContactMe() {
         Contact
       </h1>
       <div className="mt-10 mx-auto lg:ml-16 flex gap-8 flex-col justify-center items-center md:flex-row lg:flex-row lg:justify-evenly">
-        <div className="border-2  border-basic p-3 w-[90%] md:w-60 rounded-2xl">
+        <div className="border-2  border-basic p-3 w-[90%]  rounded-2xl">
           <h1 className="text-xl font-bold leading-relaxed flex flex-col gap-4 items-center">
             <span className="bg-basic p-3 rounded-full">
               <IoLocationOutline className="bg-basic text-4xl dark:text-white" />
@@ -24,7 +24,7 @@ function ContactMe() {
             <small>Jammu and Kashmir, 192121</small>
           </div>
         </div>
-        <div className="border-2  border-basic p-3 w-[90%] md:w-60 rounded-2xl">
+        <div className="border-2  border-basic p-3 w-[90%] rounded-2xl">
           <h1 className="text-xl font-bold leading-relaxed flex flex-col gap-4 items-center">
             <span className="bg-basic p-3 rounded-full">
               <IoIosMailUnread className="bg-basic text-4xl dark:text-white " />
@@ -40,7 +40,7 @@ function ContactMe() {
             </a>
           </div>
         </div>
-        <div className="border-2  border-basic p-3 w-[90%] md:w-60 rounded-2xl">
+        <div className="border-2  border-basic p-3 w-[90%] rounded-2xl">
           <h1 className="text-xl font-bold leading-relaxed flex flex-col gap-4 items-center">
             <span className="bg-basic p-3 rounded-full">
               <IoIosPhonePortrait className="bg-basic text-4xl dark:text-white" />

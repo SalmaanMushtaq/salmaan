@@ -20,7 +20,7 @@ export default function App() {
       <img
         src="src/assets/images/rainbow-superthin.webp"
         alt=""
-        className="w-full z-12 h-1"
+        className="w-full z-20 h-1"
       />
       <RouterProvider router={router} />
       <img
