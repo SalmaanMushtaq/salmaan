@@ -6,7 +6,7 @@ function Profile({ heading }: HeadingProp) {
     <div className="mt-10">
       <h1 className="text-4xl font-bold leading-relaxed">{heading}</h1>
       <div className="mt-10 justify-center items-center gap-10">
-        <div className="border-0 p-3 px-5 bg-background rounded-2xl h-[100%] customShadow dark:text-white">
+        <div className="lightShadow border-0 p-3 px-5 bg-background rounded-2xl h-[100%] customShadow dark:text-black dark:bg-darkBackground ">
           <p className="text-wrap text-justify leading-relaxed bg-transparent">
             &emsp;Hello there! 👋 I&apos;m SALMAAN MUSHTAQ, a passionate web
             developer based in Kashmir, India. With a keen eye for design and a

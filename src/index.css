@@ -58,7 +58,7 @@ main {
   text-align: center;
   position: relative;
 }
-@media screen and (max-width: 767.9px) {
+@media screen and (max-width: 639.9px) {
   .active::after {
     position: absolute;
     bottom: -8px;
@@ -256,7 +256,9 @@ svg text {
   position: relative;
   border-color: rgba(255, 149, 89, 1);
 }
-
+.dark .lightShadow {
+  box-shadow: 1px 0px 10px 10px rgba(0, 0, 0, 0.3) inset !important;
+}
 .border-wrapper::before {
   content: "";
   position: absolute;

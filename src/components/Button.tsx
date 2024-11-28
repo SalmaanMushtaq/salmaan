@@ -20,8 +20,8 @@ function Button({ text }: Text) {
   };
   return (
     <a
-      className="customShadow inline-flex justify-center items-center p-1 px-6 bg-btnBackground rounded-full
-      border-2 border-transparent hover:border-white hover:border-2"
+      className="lightShadow customShadow inline-flex justify-center items-center p-1 px-6 bg-btnBackground rounded-full
+      border-2 border-transparent hover:border-white hover:border-2 dark:text-black dark:bg-darkBackground "
       href={`#${formattedSections}`}
       onClick={handleClick}
     >

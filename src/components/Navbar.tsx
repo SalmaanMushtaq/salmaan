@@ -5,7 +5,6 @@ import { IoSunny } from "react-icons/io5";
 import { FaMoon } from "react-icons/fa6";
 
 function Navbar() {
-  const [isFixed, setIsFixed] = useState(false);
   const [dark, setDark] = useState(true);
 
   const darkModeHandler = () => {
@@ -13,23 +12,10 @@ function Navbar() {
     document.body.classList.toggle("dark");
   };
 
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setIsFixed(true);
-    } else {
-      setIsFixed(false);
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
   return (
     <header className="container mx-auto">
       {/* Desktop Navbar */}
-      <nav
-        className={`container px-16 hidden  sm:flex sm:justify-end sm:items-center gap-4 pt-8 pb-3
-        ${isFixed ? "fixed top-0 w-full z-10 bg-[#181313]" : ""}`}
-      >
+      <nav className="container px-16 hidden  sm:flex sm:justify-end sm:items-center gap-4 pt-8 pb-3 fixed top-0 w-full z-10 bg-[#181313] dark:bg-[#f5f5f5]">
         <ul className="flex gap-4 flex-wrap">
           <li>
             <Link
@@ -72,11 +58,7 @@ function Navbar() {
       </nav>
 
       {/* Mobile Navbar */}
-      <nav
-        className={`flex sm:hidden justify-center items-center py-4 ${
-          isFixed ? "w-full fixed top-0  z-10 bg-[#181313]" : ""
-        }`}
-      >
+      <nav className="flex sm:hidden justify-center items-center py-4 w-full fixed top-0  z-10 bg-[#181313] dark:bg-[#f5f5f5]">
         <ul className="flex items-center gap-16">
           <li>
             <Link to="/">
