@@ -14,7 +14,9 @@ html,
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #181313ed;
+  /* background-color: #181313ed; */
+  background-color: #00070f;
+  background-image: url("assets/background-dark.png");
   color: whitesmoke;
   font-family: "Merriweather", serif;
   letter-spacing: 1px;
@@ -22,13 +24,22 @@ html,
   flex-direction: column;
   scroll-behavior: smooth;
 }
-
+nav {
+  background-color: #000000 !important;
+  background-image: url("assets/background-dark.png");
+}
 main {
   flex: 1 1 auto;
 }
 .dark #root {
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  background-color: #e6ebee;
+  background-image: url("assets/background-light.png");
   color: #181313ed;
+}
+.dark nav {
+  background-color: #e0e2e3 !important;
+  background-image: url("assets/background-light.png");
 }
 .customShadow {
   box-shadow:
