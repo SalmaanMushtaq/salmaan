@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import MySelf from "../assets/images/myself.webp";
 import TypingAnimation from "./ui/typing-animation";
 function Introduction() {
