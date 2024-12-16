@@ -25,7 +25,7 @@ html,
   scroll-behavior: smooth;
 }
 nav {
-  background-color: #000000 !important;
+  background-color: #00070f !important;
   background-image: url("assets/background-dark.png");
 }
 main {
@@ -38,7 +38,7 @@ main {
   color: #181313ed;
 }
 .dark nav {
-  background-color: #e0e2e3 !important;
+  background-color: #e6ebee !important;
   background-image: url("assets/background-light.png");
 }
 .customShadow {
@@ -290,5 +290,11 @@ svg text {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
   }
 }

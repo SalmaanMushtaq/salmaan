@@ -1,5 +1,6 @@
 import { createRootRoute } from "@tanstack/react-router";
 import MainLayout from "../components/layouts/MainLayout";
+import Error404 from "@/components/ui-compoents/404-error";
 
 export const Route = createRootRoute({
   component: MainLayout,
@@ -7,9 +8,5 @@ export const Route = createRootRoute({
 });
 
 function NotFound() {
-  return (
-    <>
-      <h1>Not Found</h1>
-    </>
-  );
+  return <Error404 />;
 }

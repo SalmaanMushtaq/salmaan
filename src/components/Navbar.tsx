@@ -3,6 +3,7 @@ import { FcHome, FcBusinessman, FcContacts } from "react-icons/fc";
 import { Link } from "@tanstack/react-router";
 import { IoSunny } from "react-icons/io5";
 import { FaMoon } from "react-icons/fa6";
+import SideCannonButton from "./ui-compoents/side-cannon-button";
 
 function Navbar() {
   const [dark, setDark] = useState(true);
@@ -23,7 +24,7 @@ function Navbar() {
               className="dark:text-white border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
               hover:border-white hover:border-2"
             >
-              Profile
+              <SideCannonButton text="Profile" />
             </Link>
           </li>
           <li>
@@ -32,7 +33,7 @@ function Navbar() {
               className="dark:text-white border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
                hover:border-white hover:border-2"
             >
-              Portfolio
+              <SideCannonButton text="Portfolio" />
             </Link>
           </li>
           <li>
@@ -41,7 +42,7 @@ function Navbar() {
               className=" dark:text-white border-2 border-navLinkBorder customShadow p-1 px-6 bg-background rounded-full transition-all duration-200
               hover:border-white hover:border-2"
             >
-              Contact
+              <SideCannonButton text="Contact" />
             </Link>
           </li>
           <li>
