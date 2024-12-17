@@ -3,9 +3,11 @@ import Introduction from "../../../components/Introduction";
 import Profile from "../../../components/Profile";
 import Button from "../../../components/Button";
 import Works from "../../../components/Works";
+import Loading from "@/components/shared/loading";
 
 export const Route = createLazyFileRoute("/_layout/portfolio")({
   component: Portfolio,
+  pendingComponent: Loading,
 });
 
 function Portfolio() {

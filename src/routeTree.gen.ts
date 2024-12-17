@@ -10,108 +10,110 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as LayoutIndexImport } from './routes/_layout/index'
-import { Route as LayoutPortfolioRouteImport } from './routes/_layout/portfolio/route'
-import { Route as LayoutContactRouteImport } from './routes/_layout/contact/route'
+import { Route as rootRoute } from "./routes/__root";
+import { Route as LayoutIndexImport } from "./routes/_layout/index";
+import { Route as LayoutPortfolioRouteImport } from "./routes/_layout/portfolio/route";
+import { Route as LayoutContactRouteImport } from "./routes/_layout/contact/route";
 
 // Create/Update Routes
 
 const LayoutIndexRoute = LayoutIndexImport.update({
-  id: '/_layout/',
-  path: '/',
+  id: "/_layout/",
+  path: "/",
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/_layout/index.lazy').then((d) => d.Route))
+} as any).lazy(() =>
+  import("./routes/_layout/index.lazy").then((d) => d.Route)
+);
 
 const LayoutPortfolioRouteRoute = LayoutPortfolioRouteImport.update({
-  id: '/_layout/portfolio',
-  path: '/portfolio',
+  id: "/_layout/portfolio",
+  path: "/portfolio",
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
-  import('./routes/_layout/portfolio/route.lazy').then((d) => d.Route),
-)
+  import("./routes/_layout/portfolio/route.lazy").then((d) => d.Route)
+);
 
 const LayoutContactRouteRoute = LayoutContactRouteImport.update({
-  id: '/_layout/contact',
-  path: '/contact',
+  id: "/_layout/contact",
+  path: "/contact",
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
-  import('./routes/_layout/contact/route.lazy').then((d) => d.Route),
-)
+  import("./routes/_layout/contact/route.lazy").then((d) => d.Route)
+);
 
 // Populate the FileRoutesByPath interface
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/_layout/contact': {
-      id: '/_layout/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof LayoutContactRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/_layout/portfolio': {
-      id: '/_layout/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof LayoutPortfolioRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/_layout/': {
-      id: '/_layout/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof LayoutIndexImport
-      parentRoute: typeof rootRoute
-    }
+    "/_layout/contact": {
+      id: "/_layout/contact";
+      path: "/contact";
+      fullPath: "/contact";
+      preLoaderRoute: typeof LayoutContactRouteImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/_layout/portfolio": {
+      id: "/_layout/portfolio";
+      path: "/portfolio";
+      fullPath: "/portfolio";
+      preLoaderRoute: typeof LayoutPortfolioRouteImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/_layout/": {
+      id: "/_layout/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof LayoutIndexImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/contact': typeof LayoutContactRouteRoute
-  '/portfolio': typeof LayoutPortfolioRouteRoute
-  '/': typeof LayoutIndexRoute
+  "/contact": typeof LayoutContactRouteRoute;
+  "/portfolio": typeof LayoutPortfolioRouteRoute;
+  "/": typeof LayoutIndexRoute;
 }
 
 export interface FileRoutesByTo {
-  '/contact': typeof LayoutContactRouteRoute
-  '/portfolio': typeof LayoutPortfolioRouteRoute
-  '/': typeof LayoutIndexRoute
+  "/contact": typeof LayoutContactRouteRoute;
+  "/portfolio": typeof LayoutPortfolioRouteRoute;
+  "/": typeof LayoutIndexRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/_layout/contact': typeof LayoutContactRouteRoute
-  '/_layout/portfolio': typeof LayoutPortfolioRouteRoute
-  '/_layout/': typeof LayoutIndexRoute
+  __root__: typeof rootRoute;
+  "/_layout/contact": typeof LayoutContactRouteRoute;
+  "/_layout/portfolio": typeof LayoutPortfolioRouteRoute;
+  "/_layout/": typeof LayoutIndexRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/contact' | '/portfolio' | '/'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/contact' | '/portfolio' | '/'
-  id: '__root__' | '/_layout/contact' | '/_layout/portfolio' | '/_layout/'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: "/contact" | "/portfolio" | "/";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/contact" | "/portfolio" | "/";
+  id: "__root__" | "/_layout/contact" | "/_layout/portfolio" | "/_layout/";
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  LayoutContactRouteRoute: typeof LayoutContactRouteRoute
-  LayoutPortfolioRouteRoute: typeof LayoutPortfolioRouteRoute
-  LayoutIndexRoute: typeof LayoutIndexRoute
+  LayoutContactRouteRoute: typeof LayoutContactRouteRoute;
+  LayoutPortfolioRouteRoute: typeof LayoutPortfolioRouteRoute;
+  LayoutIndexRoute: typeof LayoutIndexRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   LayoutContactRouteRoute: LayoutContactRouteRoute,
   LayoutPortfolioRouteRoute: LayoutPortfolioRouteRoute,
   LayoutIndexRoute: LayoutIndexRoute,
-}
+};
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {
